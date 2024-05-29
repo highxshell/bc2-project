@@ -54,15 +54,23 @@ const Hero = () => {
         <div>
           <h1
             style={{
-              paddingTop: "20vh",
+              paddingTop: "21vh",
               fontFamily: "monospace",
-              fontSize: "3.5rem",
+              fontSize: "6rem",
               fontWeight: "bold",
               textAlign: "center",
+              color: "#512da8",
+              textDecoration: "underline",
+              textShadow: `
+                -1px -1px 0 #fff,  
+                1px -1px 0 #fff,
+                -1px 1px 0 #fff,
+                1px 1px 0 #fff
+              `,
             }}
           >
-            Start a New Journey
-            <p>With SoLinkedin </p>
+            START A NEW JOURNEY
+            {/* <p>With SoLinkedin </p> */}
           </h1>
           <div class="flex justify-center">
             {isPublicKey ? (
@@ -71,7 +79,7 @@ const Hero = () => {
                   <>
                     <button
                       onClick={() => router.push("/main")}
-                      class={`md:mr-5 bg-white text-black py-4 px-10 rounded-3xl inline-flex items-center mx-10 mt-10 `}
+                      className={`md:mr-5 bg-[#512da8] text-white py-4 px-10 rounded-3xl inline-flex items-center mx-10 mt-5 transition-colors hover:bg-[#1a1f2e]`}
                     >
                       <span>DIVE IN</span>
                       <BsArrowRight className="ml-1 w-5 text-3xl" />

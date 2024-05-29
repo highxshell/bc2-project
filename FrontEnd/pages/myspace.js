@@ -53,14 +53,19 @@ const MySpace = () => {
                     "
         >
           <div>
-            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-white">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-white text-center">
               Your Friends
             </h1>
             <div class="container px-5 py-5 mx-auto">
               <div class="flex flex-wrap -m-5 px-24 py-1 ">
                 {friendLoading ? (
                   <>
-                  <Image src="/yellowLoader.gif" width={500} height={500} className="m-auto"/>
+                    <Image
+                      src="/yellowLoader.gif"
+                      width={500}
+                      height={500}
+                      className="m-auto"
+                    />
                   </>
                 ) : (
                   <>
@@ -104,7 +109,7 @@ const MySpace = () => {
               <div class="container px-2 py-5 mx-auto">
                 <div class="flex flex-wrap w-full mb-10 flex-col items-center text-center">
                   <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-white">
-                    see what others are talking about.....
+                    See what others are talking about.....
                   </h1>
                   <div
                     class="flex relative mb-3
@@ -115,7 +120,7 @@ const MySpace = () => {
                       onChange={statusHandler}
                       placeholder="whats going on .....!!"
                       type="text"
-                      class="w-full bg-white rounded-full mt-2 border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out "
+                      class="w-full bg-white  mt-2 border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out "
                     />
 
                     {loading ? (
@@ -131,28 +136,35 @@ const MySpace = () => {
                       <>
                         <button
                           onClick={() => addStatus()}
-                          class="bg-white text-black py-3 mx-3 px-4 rounded-3xl  items-center"
+                          className=" text-white hover:bg-[#512da8]  text-white py-3 mx-3 px-4 rounded-3xl items-center post-button"
                         >
-                          Post
+                          POST
                         </button>
                       </>
                     )}
                   </div>
-                  <div class="flex justify-center">
+                  <div className="flex justify-center">
                     <button
                       onClick={() => setShowWhichStatus(true)}
-                      class={`bg-white text-black py-4 px-10 rounded-3xl inline-flex items-center mx-10 mt-10 `}
+                      className={`bg- text-black py-4 px-10 rounded-3xl inline-flex items-center mx-10 mt-10 ${
+                        showWhichStatus
+                          ? "bg-[#512da8] text-white hover:bg-[#1a1f2e]"
+                          : "hover:bg-[#1a1f2e]"
+                      }`}
                     >
-                      <span>ALL Thoughts</span>
+                      <span className="text-white">ALL THOUGHTS</span>
                     </button>
                     <button
                       onClick={() => setShowWhichStatus(false)}
-                      class={`bg-white text-black py-4 px-10 rounded-3xl inline-flex items-center mx-10 mt-10 `}
+                      className={`bg- text-black py-4 px-10 rounded-3xl inline-flex items-center mx-10 mt-10 ${
+                        !showWhichStatus
+                          ? "bg-[#512da8] text-white hover:bg-[#1a1f2e]"
+                          : "hover:bg-[#1a1f2e]"
+                      }`}
                     >
-                      <span>My Thoughts</span>
+                      <span className="text-white">MY THOUGHTS</span>
                     </button>
                   </div>
-
                   {/* <input class="lg:w-90 mt-2 h-70 leading-relaxed text-gray-500 bg-white rounded-full"></input> */}
                 </div>
                 <div class="container px-5 py-5 mx-auto">
