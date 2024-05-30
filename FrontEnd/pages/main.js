@@ -30,7 +30,7 @@ const main = () => {
           <div class="flex flex-wrap -m-5 px-24 py-1 sm:px-2 ">
             {}
             {allUsers.map((item, keys) => {
-              if (keys < upperBound && keys >= lowerBound) {
+              if (keys < upperBound && keys >= lowerBound && item.account.name !== "dasda") {
                 return (
                   <>
                     {peopleLoading ? (

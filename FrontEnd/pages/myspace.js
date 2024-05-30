@@ -187,7 +187,7 @@ const MySpace = () => {
                                 () =>
                                   timeConverter(item.account.initTime.words[0]);
                               }
-                              if (allStatus) {
+                              if (allStatus && item.account.name !== "dasda") {
                                 return (
                                   <>
                                     <div

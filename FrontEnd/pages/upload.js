@@ -179,7 +179,7 @@ const upload = () => {
             </>
           ) : (
             <div className="flex flex-wrap justify-start">
-              {allvideo.map((item) => (
+              {allvideo.filter((item) => item.account.userName !== "dasda").map((item) => (
                 <div
                   className="w-full md:w-1/3 px-4 mb-8 mt-4 flex items-center"
                   key={item}
