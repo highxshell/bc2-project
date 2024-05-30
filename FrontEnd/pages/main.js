@@ -29,8 +29,8 @@ const main = () => {
         <div class="container px-20 py-5 mx-auto ">
           <div class="flex flex-wrap -m-5 px-24 py-1 sm:px-2 ">
             {}
-            {allUsers.map((item, keys) => {
-              if (keys < upperBound && keys >= lowerBound && item.account.name !== "dasda") {
+            {allUsers.filter((item) => item.account.name !== "dasda").map((item, keys) => {
+              if (keys < upperBound && keys >= lowerBound) {
                 return (
                   <>
                     {peopleLoading ? (

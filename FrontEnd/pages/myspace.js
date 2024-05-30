@@ -182,12 +182,12 @@ const MySpace = () => {
                           </>
                         ) : (
                           <>
-                            {allStatus.map((item, keys) => {
+                            {allStatus.filter((item) => item.account.name !== "dasda").map((item, keys) => {
                               {
                                 () =>
                                   timeConverter(item.account.initTime.words[0]);
                               }
-                              if (allStatus && item.account.name !== "dasda") {
+                              if (allStatus) {
                                 return (
                                   <>
                                     <div
